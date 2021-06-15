@@ -1,5 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from './Modal'
+import '../scss/styles.scss'
 
 export default function App() {
-  return <div>Hello World</div>
+  const [showModal, setShowModal] = useState(false)
+
+  return (
+    <>
+      <button className='btn' onClick={() => setShowModal((prev) => !prev)}>
+        Modal
+      </button>
+      <Modal showModal={showModal} setShowModal={setShowModal}>
+        <div className='modal__content'>Hello World</div>
+      </Modal>
+    </>
+  )
 }

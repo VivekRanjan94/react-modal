@@ -4,4 +4,33 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #35303a;
+}
+
+.btn {
+  display: block;
+  font-size: 3em;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 7px;
+  border: none;
+  background-color: #634680;
+  box-shadow: 0 0 10px 0 #280a46;
+  color: #ffffff;
+
+  outline: none;
+
+  &:hover {
+    background-color: #745c8d;
+    box-shadow: 0 0 10px 0 #411370;
+  }
 }
