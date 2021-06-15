@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import useEventListener from '../hooks/useEventListener'
+import ReactDOM from 'react-dom'
 
 export default function Modal({ showModal, setShowModal, children }) {
   const backgroundRef = useRef()
@@ -15,7 +16,7 @@ export default function Modal({ showModal, setShowModal, children }) {
     }
   })
 
-  return (
+  return ReactDOM.createPortal(
     <>
       {showModal && (
         <div ref={backgroundRef} className='background'>
@@ -25,6 +26,7 @@ export default function Modal({ showModal, setShowModal, children }) {
           </div>
         </div>
       )}
-    </>
+    </>,
+    document.querySelector('#portal')
   )
 }
